@@ -15,6 +15,13 @@ use Doctrine\ORM\Mapping\GeneratedValue;
  * @ORM\Table(name="test")
  */
 class Test{
+    /**
+     * Result statuses constants
+     */
+    const RESULT_NORMAL = 'normal';
+    const RESULT_ILLEGAL = 'illegal';
+    const RESULT_FAILED = 'failed';
+    const RESULT_SUCCESS = 'success';
 
     /**
      * @ORM\Column(type="integer")
@@ -39,7 +46,7 @@ class Test{
     private $endTime;
 
     /**
-     * @ORM\Column(type="string", length=25, nullable=true)
+     * @ORM\Column(type="string", columnDefinition="ENUM('normal', 'illegal', 'failed', 'success')", nullable=true)
      */
     private $result;
 
