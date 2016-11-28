@@ -2,8 +2,6 @@
 
 namespace AppBundle\Controller;
 
-//use AppBundle\Entity\Init;
-use AppBundle\Controller\Init;
 use AppBundle\Entity\Test;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
