@@ -91,17 +91,8 @@ class InitController extends Controller
      */
     public function getTest()
     {
-        $repository = $this->getDoctrine()
-            ->getRepository('AppBundle:Test');
-
-        $query = $repository->createQueryBuilder('t')
-            ->where('t.result = :normal')
-            ->orWhere('t.result = :success')
-            ->setParameters(['normal' => Test::RESULT_NORMAL, 'success' => Test::RESULT_SUCCESS])
-            ->getQuery();
-
-        $result = $query->getResult();
-
-        return $result;
+        return $this->getDoctrine()
+            ->getRepository('AppBundle:Test')
+            ->findNormalAndSuccess();
     }
 }
