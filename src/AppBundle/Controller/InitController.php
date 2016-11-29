@@ -33,6 +33,14 @@ class InitController extends Controller
     }
 
     /**
+     * @Route("/buttons", name="buttons")
+     */
+    public function buttonsAction(Request $request)
+    {
+        return $this->render('default/index.html.twig');
+    }
+
+    /**
      * Creates table test
      * @return string
      */
