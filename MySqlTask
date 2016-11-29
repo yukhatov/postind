@@ -1,0 +1,21 @@
+SELECT `date`, `value`, `name`, `desc` FROM link,data,info WHERE link.info_id = info.id AND link.data_id = data.id
+
+CREATE TABLE IF NOT EXISTS `link` (
+  `data_id` int(11) unsigned NOT NULL,
+  `info_id` int(11) unsigned NOT NULL,
+  KEY `data_id` (`data_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+
+CREATE TABLE `info` (
+        `id` int(11) NOT NULL auto_increment,
+        `name` varchar(255) default NULL,
+        `desc` text default NULL,
+        PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+
+CREATE TABLE `data` (
+        `id` int(11) NOT NULL auto_increment,
+        `date` date default NULL,
+        `value` INT(11) default NULL,
+        PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
