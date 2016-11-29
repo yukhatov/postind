@@ -42,12 +42,12 @@ class InitController extends Controller
         $application = new Application($kernel);
         $application->setAutoExit(false);
 
+        $output = new BufferedOutput();
         $input = new ArrayInput(array(
             'command' => 'doctrine:schema:drop',
             '--force' => true,
         ));
 
-        $output = new BufferedOutput();
         $application->run($input, $output);
 
         $input = new ArrayInput(array(
@@ -71,9 +71,7 @@ class InitController extends Controller
         $application = new Application($kernel);
         $application->setAutoExit(false);
 
-
         $output = new BufferedOutput();
-
         $input = new ArrayInput(array(
             'command' => 'doctrine:fixtures:load',
         ));
